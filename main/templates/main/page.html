@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+
+    <p>{{ content }}</p>
+
+    <hr>
+
+    {% if is_home %}
+        <h3>Посилання на інші сторінки:</h3>
+        <ul>
+            <li><a href="{% url 'about' %}">Про нас</a></li>
+            <li><a href="{% url 'contacts' %}">Контакти</a></li>
+        </ul>
+    {% else %}
+        <a href="{% url 'home' %}">На головну</a>
+    {% endif %}
+</body>
+</html>
